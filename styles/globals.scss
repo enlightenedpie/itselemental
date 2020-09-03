@@ -1,3 +1,5 @@
+@import '_normalize';
+
 html,
 body {
   padding: 0;
@@ -6,23 +8,41 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+html,
+body,
+#__next {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+#__next {
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 58%,
+    rgba(0, 0, 0, 1) 62%,
+    rgba(255, 182, 246, 1) 64%,
+    rgba(242, 99, 223, 1) 65%,
+    rgba(247, 59, 225, 1) 67%,
+    rgba(73, 14, 66, 1) 71%,
+    rgba(0, 0, 0, 1) 77%
+  );
+}
+
 body {
   background-color: #111;
   -webkit-overflow-scrolling: touch;
   touch-action: manipulation;
 }
 
-main {
-  height: 100vh;
-  width: 100vw;
-  display: grid;
-  grid-template-columns: repeat(18, 1fr);
-  grid-template-rows: repeat(10, 100px);
-  gap: 5px;
-
-  .el {
-    border: 5px solid white;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
 }
 
 a {
@@ -33,3 +53,5 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@import 'pte';

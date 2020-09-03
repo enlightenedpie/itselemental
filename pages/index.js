@@ -10,22 +10,27 @@ const getKey = () => {
 
 export default function Home() {
   let { elements: els } = data
-  console.log(els)
+  //console.log(els)
   return (
-    <main>
+    <pte-main>
       {els.map((el) => {
+        let key = 'el' + el.atomic_mass + '∫' + el.xpos + '∆' + el.ypos
         return (
-          <div
-            key={getKey()}
-            className="el"
-            id={'el' + el.number}
+          <pte-element
+            key={key}
+            data-key={key}
+            id={'pte-' + el.number}
             style={{
               gridColumn: `${el.xpos} / ${el.xpos + 1}`,
               gridRow: `${el.ypos} / ${el.ypos + 1}`,
             }}
-          ></div>
+          >
+            <pte-details>
+              <h1>{el.symbol}</h1>
+            </pte-details>
+          </pte-element>
         )
       })}
-    </main>
+    </pte-main>
   )
 }
